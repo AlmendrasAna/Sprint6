@@ -10,5 +10,5 @@ interface PhoneApi{
     suspend fun getProductsData():Response<List<PhoneProductsData>>
 
     @GET("/details")
-    suspend fun getDetailsData():Response<List<PhoneDetailsData>>
+    suspend fun getDetailsData():Response<PhoneDetailsData>
 }
