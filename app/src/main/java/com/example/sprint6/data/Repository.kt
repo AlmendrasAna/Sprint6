@@ -8,6 +8,7 @@ import com.example.sprint6.data.local.PhoneProductsEntity
 import com.example.sprint6.data.remoto.PhoneApi
 import com.example.sprint6.data.remoto.PhoneDetailsData
 import com.example.sprint6.data.remoto.PhoneProductsData
+import javax.security.auth.login.LoginException
 
 
 class Repository(private val phoneApi: PhoneApi, private val phoneDao: PhoneDao) {
@@ -41,14 +42,13 @@ class Repository(private val phoneApi: PhoneApi, private val phoneDao: PhoneDao)
             val response = phoneApi.getProductsData()
             if (response.isSuccessful) {
                 val bodyResponse = response.body()
-
-                bodyResponse?.let { phoneData ->
+                   bodyResponse?.let { phoneData ->
                     val phoneProductsEntity = phoneData.map {
                         it.toProductEntity()
                     }
                     phoneDao.insertsListProductsEntity(phoneProductsEntity)
                 }
-            }
+            }else {  Log.e("catch", "ERROR")}
         } catch (exception: Exception) {
             Log.e("catch", "ERROR")
         }
