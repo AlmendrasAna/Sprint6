@@ -1,4 +1,4 @@
-package com.example.sprint6.view.recycler
+package com.example.sprint6.view
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
