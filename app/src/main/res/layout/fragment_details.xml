@@ -12,10 +12,8 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -52,43 +50,45 @@
                 android:layout_width="0dp"
                 android:layout_height="340dp"
                 android:layout_marginTop="8dp"
+                android:contentDescription="@string/image"
                 android:src="@drawable/ic_launcher_foreground"
                 app:layout_constraintEnd_toStartOf="@+id/guideline4"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nameDetailsTxt" />
+                app:layout_constraintTop_toBottomOf="@+id/nameDetailsTxt"
+                tools:srcCompat="@drawable/baseline_credit_card_24" />
 
             <TextView
                 android:id="@+id/lastTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Antes $"
+                android:text="@string/antes"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/lastPriceTxt"
-                app:layout_constraintEnd_toStartOf="@+id/lastPriceTxt"
+                app:layout_constraintEnd_toEndOf="@+id/nowTxt"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/imageDetails"
+                app:layout_constraintStart_toStartOf="@+id/nowTxt"
                 app:layout_constraintTop_toTopOf="@+id/lastPriceTxt" />
 
             <TextView
                 android:id="@+id/lastPriceTxt"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
+                android:foreground="@drawable/strikethrough_foreground"
                 android:text="TextView"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toTopOf="@+id/priceDetaisTxt"
-                app:layout_constraintEnd_toEndOf="@+id/priceDetaisTxt"
                 app:layout_constraintStart_toStartOf="@+id/priceDetaisTxt" />
 
             <TextView
                 android:id="@+id/nowTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="8dp"
                 android:fontFamily="sans-serif-black"
-                android:text="Ahora $"
-                android:textSize="16sp"
+                android:text="@string/ahora"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/priceDetaisTxt"
                 app:layout_constraintStart_toEndOf="@+id/imageDetails"
                 app:layout_constraintTop_toTopOf="@+id/priceDetaisTxt" />
@@ -97,6 +97,7 @@
                 android:id="@+id/priceDetaisTxt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
                 android:fontFamily="sans-serif-black"
                 android:text="0"
                 android:textSize="16sp"
@@ -111,19 +112,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:drawableStart="@drawable/baseline_credit_card_24"
                 android:gravity="center"
-                android:text="TextView"
                 app:layout_constraintEnd_toEndOf="@+id/priceDetaisTxt"
-                app:layout_constraintStart_toEndOf="@+id/imageDetails"
+                app:layout_constraintStart_toStartOf="@+id/nowTxt"
                 app:layout_constraintTop_toBottomOf="@+id/priceDetaisTxt" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/sendMail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/accent_color"
+                android:contentDescription="@string/contactar"
                 android:drawableEnd="@drawable/baseline_contact_mail_24"
-                android:text="Contactar Area de Ventas"
+                android:text="@string/contactar"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
