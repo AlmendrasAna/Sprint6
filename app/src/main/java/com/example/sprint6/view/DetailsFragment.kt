@@ -49,7 +49,11 @@ class DetailsFragment : Fragment() {
         detailsPhone.observe(viewLifecycleOwner) { detailPhone ->
             if (detailPhone != null) {
                 binding.nameDetailsTxt.text = detailPhone.name
-                binding.imageView.load(detailPhone.image)
+                binding.imageDetails.load(detailPhone.image)
+                binding.lastPriceTxt.text = detailPhone.lastPrice.toString()
+                binding.priceDetaisTxt.text= detailPhone.price.toString()
+                binding.creditTxt.text=detailPhone.credit.toString()
+                binding.descriptionTxt.text=detailPhone.description
             }
         }
         return binding.root

@@ -4,32 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.DetailsFragment" >
+    tools:context=".view.DetailsFragment">
 
     <ScrollView
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/accent_color">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/descriptionTxt"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="8dp"
-                android:src="@drawable/ic_launcher_foreground"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="8dp"
+                android:padding="5dp"
+                android:text="TextView"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nameDetailsTxt" />
+                app:layout_constraintTop_toBottomOf="@+id/imageDetails" />
 
             <TextView
                 android:id="@+id/nameDetailsTxt"
@@ -37,9 +41,109 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="TextView"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageDetails"
+                android:layout_width="0dp"
+                android:layout_height="340dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_launcher_foreground"
+                app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameDetailsTxt" />
+
+            <TextView
+                android:id="@+id/lastTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Antes $"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/lastPriceTxt"
+                app:layout_constraintEnd_toStartOf="@+id/lastPriceTxt"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/imageDetails"
+                app:layout_constraintTop_toTopOf="@+id/lastPriceTxt" />
+
+            <TextView
+                android:id="@+id/lastPriceTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="TextView"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/priceDetaisTxt"
+                app:layout_constraintEnd_toEndOf="@+id/priceDetaisTxt"
+                app:layout_constraintStart_toStartOf="@+id/priceDetaisTxt" />
+
+            <TextView
+                android:id="@+id/nowTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Ahora $"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/priceDetaisTxt"
+                app:layout_constraintStart_toEndOf="@+id/imageDetails"
+                app:layout_constraintTop_toTopOf="@+id/priceDetaisTxt" />
+
+            <TextView
+                android:id="@+id/priceDetaisTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="0"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageDetails"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.3"
+                app:layout_constraintStart_toEndOf="@+id/nowTxt"
+                app:layout_constraintTop_toTopOf="@+id/imageDetails" />
+
+            <TextView
+                android:id="@+id/creditTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="@+id/priceDetaisTxt"
+                app:layout_constraintStart_toEndOf="@+id/imageDetails"
+                app:layout_constraintTop_toBottomOf="@+id/priceDetaisTxt" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/accent_color"
+                android:drawableEnd="@drawable/baseline_contact_mail_24"
+                android:text="Contactar Area de Ventas"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionTxt" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.62" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="1.0" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
