@@ -1,4 +1,5 @@
 package com.example.sprint6.view.recycler
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -14,7 +15,6 @@ class AdapterProduct : RecyclerView.Adapter<AdapterProduct.ViewHolder>() {
 
 
     private var listProduct: List<PhoneProductsEntity> = emptyList()
-
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -46,14 +46,17 @@ class AdapterProduct : RecyclerView.Adapter<AdapterProduct.ViewHolder>() {
         fun bind(phoneProductsEntity: PhoneProductsEntity) {
 
 
-            binding.textView.text=phoneProductsEntity.id.toString()
+            binding.nameProduct.text = phoneProductsEntity.name.toString()
+            binding.priceProduct.text = "$ " + phoneProductsEntity.price.toString()
+            binding.imagePhone.load(phoneProductsEntity.image)
 
-            binding.cardItem.setOnClickListener{
+            binding.cardItem.setOnClickListener {
 
                 var bundle = Bundle()
-                bundle.putInt("id",phoneProductsEntity.id)
+                bundle.putInt("id", phoneProductsEntity.id)
 
-               // Navigation.findNavController(binding.root).navigate(R.id.action_showListFragment_to_infoFragment,bundle)
+                Navigation.findNavController(binding.root)
+                    .navigate(R.id.action_productsFragment_to_detailsFragment, bundle)
             }
 
         }

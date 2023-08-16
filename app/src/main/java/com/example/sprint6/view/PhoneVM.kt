@@ -24,7 +24,10 @@ class PhoneVM (application: Application): AndroidViewModel(application){
 
         repository.loadProductsPhone()
     }
+    fun getOneDetails(id :  Int)= viewModelScope.launch{
 
+        repository.loadDetailsPhone(id)
+    }
 
 }
 

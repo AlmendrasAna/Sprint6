@@ -19,10 +19,10 @@ class Repository(private val phoneApi: PhoneApi, private val phoneDao: PhoneDao)
     fun showPhoneDetailsEntity(id: Int): LiveData<PhoneDetailsEntity> =
         phoneDao.ShowDetailsEntityForId(id)
 
-    suspend fun loadDetailsPhone() {
+    suspend fun loadDetailsPhone(id:Int) {
         try {
 
-            val response = phoneApi.getDetailsData()
+            val response = phoneApi.getDetailsData(id)
             if (response.isSuccessful) {
                 val bodyResponse = response.body()
 
