@@ -119,7 +119,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/priceDetaisTxt" />
 
             <Button
-                android:id="@+id/sendMail"
+                android:id="@+id/sendMailB"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/accent_color"

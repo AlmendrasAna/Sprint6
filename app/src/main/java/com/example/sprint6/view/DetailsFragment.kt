@@ -1,15 +1,20 @@
 package com.example.sprint6.view
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.Navigation.findNavController
 import coil.load
 import com.example.sprint6.R
 import com.example.sprint6.databinding.FragmentDetailsBinding
 import com.example.sprint6.toPesos
+import okhttp3.internal.http.hasBody
+import retrofit2.http.Path
 
 private const val ARG_PARAM1 = "id"
 
@@ -34,6 +39,8 @@ class DetailsFragment : Fragment() {
         binding = FragmentDetailsBinding.inflate(inflater, container, false)
 
         init()
+
+
         return binding.root
     }
 
@@ -50,15 +57,34 @@ class DetailsFragment : Fragment() {
                 binding.lastPriceTxt.text = detailPhone.lastPrice.toPesos()
                 binding.priceDetaisTxt.text = detailPhone.price.toPesos()
                 binding.descriptionTxt.text = detailPhone.description
-                var txt : String
+                var txt: String
                 if (detailPhone.credit) {
-                  txt  = getString(R.string.acepta_credito)
+                    txt = getString(R.string.acepta_credito)
                 } else {
-                    txt= getString(R.string.no_acepta_credito)
+                    txt = getString(R.string.no_acepta_credito)
                 }
                 binding.creditTxt.text = txt
 
+                binding.sendMailB.setOnClickListener {
+
+
+                     val mail = getString(R.string.destinatario_msn)
+                    val intentEmail = Intent(Intent.ACTION_SEND, Uri.parse(mail))
+                    val bodyMsn=getString(R.string.body_msn,detailPhone.name,detailPhone.id)
+                    val asunt = getResources().getString(R.string.asunt,detailPhone.name,detailPhone.id)
+
+                    intentEmail.type = "plain/text"
+                    intentEmail.putExtra(Intent.EXTRA_EMAIL, arrayOf(mail))
+
+                    intentEmail.putExtra(Intent.EXTRA_SUBJECT,asunt )
+
+                    intentEmail.putExtra(Intent.EXTRA_TEXT, bodyMsn)
+
+                    startActivity(Intent.createChooser(intentEmail, "Consulta producto"))
+
+                }
             }
+
         }
     }
 

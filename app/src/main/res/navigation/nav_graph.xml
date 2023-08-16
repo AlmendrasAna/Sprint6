@@ -18,5 +18,14 @@
         android:id="@+id/detailsFragment"
         android:name="com.example.sprint6.view.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details" >
+        <action
+            android:id="@+id/action_detailsFragment_to_emailFragment"
+            app:destination="@id/emailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailFragment"
+        android:name="com.example.sprint6.view.EmailFragment"
+        android:label="fragment_email"
+        tools:layout="@layout/fragment_email" />
 </navigation>
