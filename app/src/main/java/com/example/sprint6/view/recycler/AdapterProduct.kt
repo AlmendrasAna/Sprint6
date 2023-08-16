@@ -9,6 +9,7 @@ import coil.load
 import com.example.sprint6.R
 import com.example.sprint6.data.local.PhoneProductsEntity
 import com.example.sprint6.databinding.ItemBinding
+import com.example.sprint6.toPesos
 
 
 class AdapterProduct : RecyclerView.Adapter<AdapterProduct.ViewHolder>() {
@@ -47,7 +48,7 @@ class AdapterProduct : RecyclerView.Adapter<AdapterProduct.ViewHolder>() {
 
 
             binding.nameProduct.text = phoneProductsEntity.name.toString()
-            binding.priceProduct.text = "$ " + phoneProductsEntity.price.toString()
+            binding.priceProduct.text = "$ " + phoneProductsEntity.price.toPesos()
             binding.imagePhone.load(phoneProductsEntity.image)
 
             binding.cardItem.setOnClickListener {

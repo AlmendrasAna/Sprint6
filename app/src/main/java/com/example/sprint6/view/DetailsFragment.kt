@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import coil.load
 import com.example.sprint6.R
 import com.example.sprint6.databinding.FragmentDetailsBinding
+import com.example.sprint6.toPesos
 
 private const val ARG_PARAM1 = "id"
 
@@ -46,8 +47,8 @@ class DetailsFragment : Fragment() {
             if (detailPhone != null) {
                 binding.nameDetailsTxt.text = detailPhone.name
                 binding.imageDetails.load(detailPhone.image)
-                binding.lastPriceTxt.text = detailPhone.lastPrice.toString()
-                binding.priceDetaisTxt.text = detailPhone.price.toString()
+                binding.lastPriceTxt.text = detailPhone.lastPrice.toPesos()
+                binding.priceDetaisTxt.text = detailPhone.price.toPesos()
                 binding.descriptionTxt.text = detailPhone.description
                 var txt : String
                 if (detailPhone.credit) {
