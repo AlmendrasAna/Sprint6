@@ -57,6 +57,13 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retro_version"
     implementation "com.squareup.retrofit2:converter-gson:$retro_version"
 
+    //--------------------Test Android-----------------------------------
+
+    androidTestImplementation "androidx.arch.core:core-testing:2.2.0"
+    androidTestImplementation "androidx.room:room-testing:$room_version"
+    androidTestImplementation 'androidx.test.ext:truth:1.5.0'
+
+
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.5.0'

@@ -17,28 +17,14 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:backgroundTint="@color/accent_color">
-
-            <TextView
-                android:id="@+id/descriptionTxt"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:padding="5dp"
-                android:text="TextView"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageDetails" />
 
             <TextView
                 android:id="@+id/nameDetailsTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="TextView"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -72,11 +58,9 @@
 
             <TextView
                 android:id="@+id/lastPriceTxt"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:foreground="@drawable/strikethrough_foreground"
-                android:text="TextView"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toTopOf="@+id/priceDetaisTxt"
                 app:layout_constraintStart_toStartOf="@+id/priceDetaisTxt" />
@@ -99,7 +83,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="sans-serif-black"
-                android:text="0"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageDetails"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -117,6 +100,18 @@
                 app:layout_constraintEnd_toEndOf="@+id/priceDetaisTxt"
                 app:layout_constraintStart_toStartOf="@+id/nowTxt"
                 app:layout_constraintTop_toBottomOf="@+id/priceDetaisTxt" />
+
+            <TextView
+                android:id="@+id/descriptionTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="5dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageDetails" />
 
             <Button
                 android:id="@+id/sendMailB"

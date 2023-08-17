@@ -6,15 +6,14 @@ import com.example.sprint6.data.local.PhoneDao
 import com.example.sprint6.data.local.PhoneDetailsEntity
 import com.example.sprint6.data.local.PhoneProductsEntity
 import com.example.sprint6.data.remoto.PhoneApi
-import com.example.sprint6.data.remoto.PhoneDetailsData
-import com.example.sprint6.data.remoto.PhoneProductsData
-import javax.security.auth.login.LoginException
+import com.example.sprint6.toDetaislEntity
+import com.example.sprint6.toProductEntity
 
 
 class Repository(private val phoneApi: PhoneApi, private val phoneDao: PhoneDao) {
 
     fun showPhoneProductsListEntity(): LiveData<List<PhoneProductsEntity>> =
-        phoneDao.ShowListProductsEntity()
+        phoneDao.showListProductsEntity()
 
     fun showPhoneDetailsEntity(id: Int): LiveData<PhoneDetailsEntity> =
         phoneDao.ShowDetailsEntityForId(id)
@@ -55,20 +54,4 @@ class Repository(private val phoneApi: PhoneApi, private val phoneDao: PhoneDao)
     }
 }
 
-fun PhoneDetailsData.toDetaislEntity(): PhoneDetailsEntity = PhoneDetailsEntity(
-    this.id,
-    this.name,
-    this.price,
-    this.image,
-    this.description,
-    this.lastPrice,
-    this.credit
-)
-
-fun PhoneProductsData.toProductEntity(): PhoneProductsEntity = PhoneProductsEntity(
-    this.id,
-    this.name,
-    this.price,
-    this.image
-)
 

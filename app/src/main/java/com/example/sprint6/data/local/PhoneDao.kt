@@ -16,7 +16,7 @@ interface PhoneDao {
     suspend fun insertsOneDetailsEntity(detailsEntitys: PhoneDetailsEntity)
 
     @Query("select * from product_table order by id ASC ")
-    fun ShowListProductsEntity(): LiveData<List<PhoneProductsEntity>>
+    fun showListProductsEntity(): LiveData<List<PhoneProductsEntity>>
 
     @Query("select * from details_table where Id = :id ")
     fun ShowDetailsEntityForId(id: Int): LiveData<PhoneDetailsEntity>
