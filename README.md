@@ -8,8 +8,8 @@ necesitan un mínimo producto viable, donde sus usuarios pueda
 observar un listado de teléfonos y seleccionar alguno.
 
 ## Capturas de pantalla
-![RecyclerView screen](screenshots/recycler_list.jng "Lista de celulares, datos simplificados") 
-![Detail card screen](screenshots/detail_phone.jng "Detalle del celular seleccionada")
+![RecyclerView screen](screenshots/recycler_list.jpg "Lista de celulares, datos simplificados") 
+![Detail card screen](screenshots/detail_phone.jpg "Detalle del celular seleccionada")
 
 ## Dependencia
 - [Material Design](https://material.io/develop/android/docs/getting-started) - Utilidades de diseño
