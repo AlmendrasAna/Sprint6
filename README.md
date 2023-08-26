@@ -17,12 +17,10 @@ necesitan un mínimo producto viable, donde sus usuarios pueda observar un lista
 - [Retrofit](https://square.github.io/retrofit/) - Consumo de API
 - [Room](https://developer.android.com/jetpack/androidx/releases/room) - Acceso a base de datos
 - [Coil](https://coil-kt.github.io/coil/) - Para el manejo de imágenes
-- [Lifecycle](https://developer.android.com/jetpack/androidx/releases/lifecycle) - Respuesta segun ciclo de vida de los componentes
 
 
 
 ## API utilizada en el proyecto
-Consume datos desde la API
 ```bash
 https://my-json-server.typicode.com/Himuravidal/FakeAPIdata/
 ```
